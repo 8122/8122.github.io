@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Juego Mater Mind</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="vendor/bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.js"></script>
+        <link href="assets/css/main.css" rel="stylesheet">
+        <script src="assets/js/masterMind.js" type="text/javascript"></script>
+        <script src="assets/js/index.js" type="text/javascript"></script>
+    </head>
+    <body onload="cargarJuego()">
+        <div class="container-fluid">
+            <div class="row" id="fila0">
+                <div class="ahujero col-md-1 col-md-offset-2 col-sm-1 col-sm-offset-2 col-xs-1 col-xs-offset-2" id="f00"></div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="f01"></div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="f02"></div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="f03"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f04"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f05"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f06"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f07"></div>
+            </div>
+            <div class="row" id="fila1">
+                <div class="ahujero col-md-1 col-md-offset-2 col-sm-1 col-sm-offset-2 col-xs-1 col-xs-offset-2" id="f10"></div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="f11"></div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="f12"></div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="f13"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f14"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f15"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f16"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f17"></div>
+            </div>
+            <div class="row" id="fila2">
+                <div class="ahujero col-md-1 col-md-offset-2 col-sm-1 col-sm-offset-2 col-xs-1 col-xs-offset-2" id="f20"></div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="f21"></div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="f02"></div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="f23"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f24"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f25"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f26"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f27"></div>
+            </div>
+            <div class="row" id="fila3">
+                <div class="ahujero col-md-1 col-md-offset-2 col-sm-1 col-sm-offset-2 col-xs-1 col-xs-offset-2" id="f00"></div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="f31"></div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="f32"></div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="f33"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f34"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f35"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f36"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f37"></div>
+            </div>
+            <div class="row" id="fila4">
+                <div class="ahujero col-md-1 col-md-offset-2 col-sm-1 col-sm-offset-2 col-xs-1 col-xs-offset-2" id="f40"></div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="f41"></div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="f42"></div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="f43"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f44"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f45"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f46"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f47"></div>
+            </div>
+            <div class="row" id="fila5">
+                <div class="ahujero col-md-1 col-md-offset-2 col-sm-1 col-sm-offset-2 col-xs-1 col-xs-offset-2" id="f50"></div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="f51"></div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="f52"></div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="f53"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f54"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f55"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f56"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f57"></div>
+            </div>
+            <div class="row" id="fila6">
+                <div class="ahujero col-md-1 col-md-offset-2 col-sm-1 col-sm-offset-2 col-xs-1 col-xs-offset-2" id="f60"></div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="f61"></div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="f62"></div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="f63"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f64"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f65"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f66"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f67"></div>
+            </div>
+            <div class="row" id="fila7">
+                <div class="ahujero col-md-1 col-md-offset-2 col-sm-1 col-sm-offset-2 col-xs-1 col-xs-offset-2" id="f70"></div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="f71"></div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="f72"></div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="f73"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f74"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f75"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f76"></div>
+                <div class="ahujero ahujero--mini col-md-1 col-sm-1 col-xs-1" id="f77"></div>
+            </div>
+            <div class="row" id="fichas">
+                <div class="ahujero col-md-1 col-md-offset-2 col-sm-1 col-sm-offset-2 col-xs-1 col-xs-offset-2" id="ficha-rojo">
+                    <div class="ficha" id="rojo" draggable="true" ondragstart="drag(event)"></div>
+                </div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="ficha-verde">
+                    <div class="ficha" id="verde" draggable="true" ondragstart="drag(event)"></div>
+                </div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="ficha-azul">
+                    <div class="ficha" id="azul" draggable="true" ondragstart="drag(event)"></div>
+                </div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="ficha-amarillo">
+                    <div class="ficha" id="amarillo" draggable="true" ondragstart="drag(event)"></div>
+                </div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="ficha-marron">
+                    <div class="ficha" id="marron" draggable="true" ondragstart="drag(event)"></div>
+                </div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="ficha-naranja">
+                    <div class="ficha" id="naranja" draggable="true" ondragstart="drag(event)"></div>
+                </div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="ficha-rosa">
+                    <div class="ficha" id="rosa" draggable="true" ondragstart="drag(event)"></div>
+                </div>
+                <div class="ahujero col-md-1 col-sm-1 col-xs-1" id="ficha-violeta">
+                    <div class="ficha" id="violeta" draggable="true" ondragstart="drag(event)"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-md-offset-2">
+                    <button type="button" class="btn btn-primary btn-lg">Comprobar</button>
+                </div>
+                <div class="col-md-3 col-md-offset-2">
+                    <button type="button" class="btn btn-warning btn-lg">Reiniciar</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
